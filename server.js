@@ -27,7 +27,7 @@ const authCheck = jwt({
   iss: 'cavallaro.auth0.com',
   algorithms: ['RS256']
 });
-mongoose.connect('mongodb://herokuhost/reallyLongLinkTheyProvide');
+mongoose.connect('mongodb://heroku_740ssjf0:hskc9aagpg41cs73d71gci2lpc@ds263759.mlab.com:63759/heroku_740ssjf0');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
