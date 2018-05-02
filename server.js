@@ -92,9 +92,9 @@ router.route('/paintings/update/:painting_id/:user_id')
     painting._id = req.params.painting_id;
     painting.last_edited_by = req.params.user_id;
     painting.paint_data = req.body;
-    Painting.findOneAndUpdate({ "_id": req.params.painting_id }, painting, { upsert: true }, function (err, doc) {
+    Painting.findOneAndUpdate({ "_id": req.params.painting_id }, painting, { upsert: true, new:true}, function (err, doc) {
       if (err) return res.send(err);
-      return res.json(painting);
+      return res.json(doc);
     });
   });
 
